@@ -3,7 +3,7 @@
  */
 function countNeighborCells(grid, n) {
   if (!grid || grid.length === 0 || grid[0].length === 0) {
-      return { count: 0, cells: new Set() };
+      return { count: 0, cells: new Set() }; 
   }
 
   const height = grid.length;
@@ -87,10 +87,10 @@ const displayGridW = 9;
 
 // Example 1: One positive cell fully contained; N=3
 function example1(daH, daW) {
-  const grid = Array(daH).fill().map(() => Array(daW).fill(0));
+  const grid = Array(daH).fill().map(() => Array(daW).fill(0)); // create a 9x9 grid arrayfilled with zeros
   grid[4][4] = 1; // Positive value at center for 9x19 (zero-based indexing will display at 5,5)
 
-  const n = 3;
+  const n = 3; // Neighborhood distance
   return createVisualGrid(grid, n, 'grid1', 'count1');
 }
 
@@ -164,16 +164,13 @@ function additionalTests() {
 
 // Run all examples when the page loads
 window.onload = function() {
-  const daH = displayGridH;
-  const daW = displayGridW;
-  console.log('h x w in:: ' + daH + ' x ' + daW);
-  example1(daH, daW);
-  example2(daH, daW);
-  example3(daH, daW);
-  example4(daH, daW);
+  example1(displayGridH, displayGridW);
+  example2(displayGridH, displayGridW);
+  example3(displayGridH, displayGridW);
+  example4(displayGridH, displayGridW);
   additionalTests(); // hard set to 5x5 internally
 
-  document.getElementById('gridSize').textContent = daH + ' x ' + daW;
+  document.getElementById('gridSize').textContent = displayGridH + ' x ' + displayGridW;
 
   // Add event listener for showing additional tests
   document.getElementById('showAdditional').addEventListener('click', function() {
