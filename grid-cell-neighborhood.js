@@ -81,13 +81,13 @@ function createVisualGrid(grid, n, containerId, countId) {
   return result;
 }
 
-// Set bounds for grid array; passed to examples in onlad function
+// Set bounds for grid array; passed to examples in onload function
 const displayGridH = 9;
 const displayGridW = 9;
 
 // Example 1: One positive cell fully contained; N=3
 function example1(daH, daW) {
-  const grid = Array(daH).fill().map(() => Array(daW).fill(0)); // create a 9x9 grid arrayfilled with zeros
+  const grid = Array(daH).fill().map(() => Array(daW).fill(0)); // create a 9x9 grid array filled with zeros
   grid[4][4] = 1; // Positive value at center for 9x19 (zero-based indexing will display at 5,5)
 
   const n = 3; // Neighborhood distance
