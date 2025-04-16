@@ -116,8 +116,8 @@ function example3(daH, daW) {
 // Example 4: Two positive values with overlapping neighborhoods; N=2
 function example4(daH, daW) {
   const grid = Array(daH).fill().map(() => Array(daW).fill(0));
-  grid[6][3] = 1; // First positive value
-  grid[6][5] = 1; // Second positive value
+  grid[5][3] = 1; // First positive value
+  grid[4][5] = 1; // Second positive value
 
   const n = 2;
   const result = createVisualGrid(grid, n, 'grid4', 'count4');
