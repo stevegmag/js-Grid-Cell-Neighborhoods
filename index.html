@@ -11,7 +11,9 @@
 <div class="container">
   <h1>Grid-Cell Neighborhoods Visualization</h1>
 
-  <p>This visualization demonstrates solutions to the Grid-Cell Neighborhoods problem, which counts cells within Manhattan distance N of any positive value in a 2D grid.</p>
+  <p>This visualization demonstrates solutions to the Grid-Cell Neighborhoods problem, which counts cells within Manhattan distance N of any positive value in a 2D grid.
+    Current grid size: <span id="gridSize"></span>
+  </p>
 
   <div class="example-container">
       <h2>Example 1: One positive cell fully contained; N=3</h2>
@@ -37,8 +39,8 @@
   <div class="example-container">
       <h2>Example 4: Two positive values with overlapping neighborhoods; N=2</h2>
       <div id="grid4" class="grid"></div>
-      <div class="results">Total cells in neighborhood: <span id="count4">0</span> (Expected: 22)</div>
-      <div class="explanation">The cells that are members of more than one neighborhood are only counted once. There are 4 cells that are members of both neighborhoods independently.</div>
+      <div class="results">Total cells in neighborhood: <span id="count4">0</span> (Expected: 21)</div>
+      <div class="explanation">The cells that are members of more than one neighborhood are only counted once. There are 5 cells that are members of both neighborhoods independently.</div>
       <div id="overlapping"></div>
   </div>
 
@@ -56,11 +58,12 @@
 
           <h3>Adjacent positives, N=1</h3>
           <div id="gridAdjacent" class="grid"></div>
-          <div class="results">Total cells: <span id="countAdjacent">0</span> (Expected: 10)</div>
+          <div class="results">Total cells: <span id="countAdjacent">0</span> (Expected: 8)</div>
       </div>
   </div>
 </div>
 
 <script src="grid-cell-neighborhood.js"></script>
+
 </body>
 </html>

@@ -82,13 +82,13 @@ function createVisualGrid(grid, n, containerId, countId) {
 }
 
 // Set bounds for grid array; passed to examples in onlad function
-const displayGridH = 11;
-const displayGridW = 11;
+const displayGridH = 9;
+const displayGridW = 9;
 
 // Example 1: One positive cell fully contained; N=3
 function example1(daH, daW) {
   const grid = Array(daH).fill().map(() => Array(daW).fill(0));
-  grid[5][5] = 1; // Positive value at center for 11x11
+  grid[4][4] = 1; // Positive value at center for 9x19 (zero-based indexing will display at 5,5)
 
   const n = 3;
   return createVisualGrid(grid, n, 'grid1', 'count1');
@@ -97,7 +97,7 @@ function example1(daH, daW) {
 // Example 2: One positive cell near an edge; N=3
 function example2(daH, daW) {
   const grid = Array(daH).fill().map(() => Array(daW).fill(0));
-  grid[5][2] = 1; // Positive value near left edge
+  grid[4][1] = 1; // Positive value near left edge
 
   const n = 3;
   return createVisualGrid(grid, n, 'grid2', 'count2');
@@ -106,8 +106,8 @@ function example2(daH, daW) {
 // Example 3: Two positive values with disjoint neighborhoods; N=2
 function example3(daH, daW) {
   const grid = Array(daH).fill().map(() => Array(daW).fill(0));
-  grid[3][7] = 1; // First positive value
-  grid[7][4] = 1; // Second positive value
+  grid[2][6] = 1; // First positive value
+  grid[6][3] = 1; // Second positive value
 
   const n = 2;
   return createVisualGrid(grid, n, 'grid3', 'count3');
@@ -116,8 +116,8 @@ function example3(daH, daW) {
 // Example 4: Two positive values with overlapping neighborhoods; N=2
 function example4(daH, daW) {
   const grid = Array(daH).fill().map(() => Array(daW).fill(0));
-  grid[7][4] = 1; // First positive value
-  grid[7][6] = 1; // Second positive value
+  grid[6][3] = 1; // First positive value
+  grid[6][5] = 1; // Second positive value
 
   const n = 2;
   const result = createVisualGrid(grid, n, 'grid4', 'count4');
@@ -164,14 +164,16 @@ function additionalTests() {
 
 // Run all examples when the page loads
 window.onload = function() {
-  let daH = displayGridH;
-  let daW = displayGridW;
+  const daH = displayGridH;
+  const daW = displayGridW;
   console.log('h x w in:: ' + daH + ' x ' + daW);
   example1(daH, daW);
   example2(daH, daW);
   example3(daH, daW);
   example4(daH, daW);
   additionalTests(); // hard set to 5x5 internally
+
+  document.getElementById('gridSize').textContent = daH + ' x ' + daW;
 
   // Add event listener for showing additional tests
   document.getElementById('showAdditional').addEventListener('click', function() {
